@@ -267,6 +267,13 @@
              </widget>
             </item>
             <item>
+             <widget class="QPushButton" name="pushButton_3">
+              <property name="text">
+               <string>停止</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QPushButton" name="pushButton_clear">
               <property name="text">
                <string>清屏</string>

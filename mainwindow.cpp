@@ -113,3 +113,8 @@ void MainWindow::on_actionguanyu_triggered()
 {
     QMessageBox::information(nullptr, tr("关于"), tr("郑州煤机液压电控有限公司 \n\n Snapcraft 打包工具"));
 }
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    exec_shell->write("^C\n");
+}
