@@ -371,6 +371,7 @@
     <property name="title">
      <string>帮助</string>
     </property>
+    <addaction name="actionguanyu"/>
    </widget>
    <addaction name="menu_file"/>
    <addaction name="menu_tool"/>
@@ -398,6 +399,11 @@
   <action name="action_exit">
    <property name="text">
     <string>退出</string>
+   </property>
+  </action>
+  <action name="actionguanyu">
+   <property name="text">
+    <string>关于</string>
    </property>
   </action>
  </widget>

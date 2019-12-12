@@ -4,6 +4,7 @@
 #include <QFileDialog>
 #include <QDateTime>
 #include <QDebug>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -106,4 +107,9 @@ void MainWindow::finishedProcess(){
 void MainWindow::on_pushButton_clear_clicked()
 {
     this->ui->textBrowser_2->clear();
+}
+
+void MainWindow::on_actionguanyu_triggered()
+{
+    QMessageBox::information(nullptr, tr("关于"), tr("郑州煤机液压电控有限公司 \n\n Snapcraft 打包工具"));
 }

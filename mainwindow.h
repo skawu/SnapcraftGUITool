@@ -29,6 +29,8 @@ private slots:
 
     void on_pushButton_clear_clicked();
 
+    void on_actionguanyu_triggered();
+
 private:
     Ui::MainWindow *ui;
 
