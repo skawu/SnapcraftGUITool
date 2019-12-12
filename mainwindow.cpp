@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QString program = "C:/Windows/SysWOW64/cmd.exe";
 #endif
 #ifdef Q_OS_UNIX
-    QString program =  "/bin/sh";
+    QString program =  "/bin/bash";
 #endif
     exec_shell->setProgram(program);
     exec_shell->start();
@@ -46,8 +46,9 @@ void MainWindow::on_action_opendir_triggered()
                                                  "E:/Myworkspace/data/",
                                                  QFileDialog::ShowDirsOnly
                                                  | QFileDialog::DontResolveSymlinks);
-
+#ifdef Q_OS_WIN32
     PathName.replace("/","\\"); //单斜杠转换双斜杠,方便后续存储bin文件
+#endif
     ui->label_selectDir->setText(PathName);    //文件名称显示
 
     dir.cd(PathName);
@@ -61,13 +62,15 @@ void MainWindow::on_pushButton_clicked()
                                                  "E:/Myworkspace/data/",
                                                  QFileDialog::ShowDirsOnly
                                                  | QFileDialog::DontResolveSymlinks);
-
+#ifdef Q_OS_WIN32
     PathName.replace("/","\\"); //单斜杠转换双斜杠,方便后续存储bin文件
+#endif
     ui->label_selectDir->setText(PathName);    //文件名称显示
 
     // 控制台切换目录
-    QString cmd = "cd " + PathName + "\n";
+    QString cmd = "cd " + PathName + " \n";
     exec_shell->write(cmd.toLocal8Bit());
+
 
     QDir::setCurrent(PathName);
 }
